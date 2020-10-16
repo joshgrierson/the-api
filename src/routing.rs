@@ -1,5 +1,5 @@
 use std::fmt;
-use serde::{Serialize};
+use serde::Serialize;
 use serde_json;
 
 #[derive(Serialize, Debug)]
