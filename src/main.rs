@@ -1,16 +1,12 @@
-mod routing;
-mod service;
+mod api;
 
 fn main() {
     const TEST_ROUTE: &str = "/lists";
 
-    let processed: Result<bool, routing::RoutingError> = routing::process_route(TEST_ROUTE);
+    let processed= api::process_route(TEST_ROUTE);
 
     match processed {
-        Ok(_) => {
-            let lists = service::return_lists().unwrap();
-            println!("{}", ser_data!(lists))
-        },
+        Ok(response) => println!("{}", response),
         Err(err) => println!("Routing error: {}", err.to_string())
     }
 }
