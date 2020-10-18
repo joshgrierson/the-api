@@ -29,7 +29,7 @@ pub struct ServerResponse {
 
 impl fmt::Display for RoutingError {
     fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
-        write!(f, "{}", serde_json::to_string(&self.error).unwrap())
+        write!(f, "{}", ser_data!(&self.error))
     }
 }
 

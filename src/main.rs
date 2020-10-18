@@ -1,6 +1,7 @@
 mod api;
 
-fn main() {
+#[tokio::main]
+async fn main() {
     const TEST_ROUTE: &str = "/lists";
 
     let processed= api::process_route(TEST_ROUTE);
